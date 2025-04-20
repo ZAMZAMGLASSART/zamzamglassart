@@ -3,30 +3,46 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Login - ZAM ZAM GLASS ART</title>
-  <link rel="stylesheet" href="style.css" />
+  <title>ZAM ZAM Login</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
   <div class="login-box">
-    <h2>ZAM ZAM GLASS ART</h2>
-    <form>
-      <select name="role" required>
-        <option value="">Select Role</option>
-        <option value="owner">Owner</option>
-        <option value="manager">Manager</option>
-        <option value="cashier">Cashier</option>
-        <option value="salesman">Salesman</option>
-        <option value="staff">Staff</option>
-        <option value="delivery">Delivery Head</option>
-        <option value="shop">Shop In-Charge</option>
-      </select>
-      <input type="text" placeholder="Enter Email" required />
-      <input type="password" placeholder="Enter Password" required />
+    <h1>ZAM ZAM GLASS ART</h1>
+    
+    <form onsubmit="return handleLogin(event)">
+      <select id="role" required>
+        <option value="" disabled selected>Select Role</option>
+        <option value="Owner">Owner</option>
+        <option value="Manager">Manager</option>
+        <option value="Cashier">Cashier</option>
+        <option value="Salesman">Salesman</option>
+        <option value="Delivery Head">Delivery Head</option>
+      </select><br><br>
+      
+      <input type="email" id="email" placeholder="Enter Email" required /><br><br>
+      <input type="password" id="password" placeholder="Enter Password" required /><br><br>
+      
       <button type="submit">Login</button>
-      <p style="margin-top: 10px; font-size: 14px;">
-        I'm a Worker? <a href="#">Register via OTP</a>
-      </p>
     </form>
+
+    <p>I'm a Worker? <a href="#">Register via OTP</a></p>
   </div>
+
+  <script>
+    function handleLogin(event) {
+      event.preventDefault();
+
+      const role = document.getElementById("role").value;
+
+      if (role === "Owner") {
+        window.location.href = "owner.html";
+      } else {
+        alert("Abhi sirf Owner login active hai. Baaki roles coming soon!");
+      }
+
+      return false;
+    }
+  </script>
 </body>
 </html>
