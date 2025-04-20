@@ -1,0 +1,98 @@
+<!DOCTYPE html><html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Salary & Staff Reports - ZAM ZAM GLASS ART</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+      margin: 0;
+      padding: 20px;
+      background: #f5f7fa;
+      color: #333;
+    }
+    h1 {
+      text-align: center;
+      margin-bottom: 30px;
+      color: #0a3d62;
+    }
+    .report-container {
+      max-width: 1000px;
+      margin: auto;
+      background: white;
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 0 20px rgba(0,0,0,0.05);
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 20px;
+    }
+    th, td {
+      padding: 12px 16px;
+      border: 1px solid #ddd;
+      text-align: center;
+    }
+    th {
+      background-color: #0a3d62;
+      color: white;
+    }
+    tr:nth-child(even) {
+      background-color: #f0f4f8;
+    }
+    .summary {
+      margin-top: 30px;
+      font-size: 16px;
+      font-weight: 500;
+    }
+    .summary span {
+      font-weight: bold;
+      color: #2d3436;
+    }
+  </style>
+</head>
+<body>
+  <h1>Salary & Staff Report</h1>
+  <div class="report-container">
+    <table>
+      <thead>
+        <tr>
+          <th>Staff Name</th>
+          <th>Role</th>
+          <th>Days Present</th>
+          <th>Per Day Rate</th>
+          <th>Total Salary</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Suraj</td>
+          <td>Cutting</td>
+          <td>24</td>
+          <td>₹500</td>
+          <td>₹12,000</td>
+        </tr>
+        <tr>
+          <td>Sahil</td>
+          <td>Polishing</td>
+          <td>22</td>
+          <td>₹450</td>
+          <td>₹9,900</td>
+        </tr>
+        <tr>
+          <td>Ajad</td>
+          <td>Helper</td>
+          <td>26</td>
+          <td>₹400</td>
+          <td>₹10,400</td>
+        </tr>
+      </tbody>
+    </table>
+    <div class="summary">
+      Total Staff: <span>3</span> | Total Payout: <span>₹32,300</span>
+    </div>
+  </div>
+</body>
+</html>
