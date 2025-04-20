@@ -1,59 +1,111 @@
-<!DOCTYPE html>
-<html lang="en">
+<!DOCTYPE html><html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Owner Dashboard - ZAM ZAM GLASS ART</title>
   <link rel="stylesheet" href="owner.css" />
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(to right, #e0eafc, #cfdef3);
+      color: #333;
+    }
+    header {
+      text-align: center;
+      padding: 2rem 1rem;
+      background-color: #0f4c75;
+      color: white;
+    }
+    .logo {
+      max-width: 120px;
+      margin-bottom: 10px;
+    }
+    .dashboard {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 20px;
+      padding: 2rem;
+    }
+    .card {
+      background: white;
+      border-radius: 12px;
+      padding: 1.5rem;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+      transition: transform 0.2s;
+    }
+    .card:hover {
+      transform: translateY(-5px);
+    }
+    .card h3 {
+      margin-top: 0;
+      color: #0f4c75;
+    }
+    .card p {
+      color: #555;
+      font-size: 15px;
+    }
+    .card a {
+      display: inline-block;
+      margin-top: 10px;
+      background-color: #0f4c75;
+      color: white;
+      padding: 10px 16px;
+      text-decoration: none;
+      border-radius: 8px;
+      font-weight: bold;
+    }
+    footer {
+      text-align: center;
+      padding: 1rem;
+      background-color: #0f4c75;
+      color: white;
+      font-size: 14px;
+    }
+  </style>
 </head>
 <body>
   <header>
     <img src="zamzam-logo.jpg" alt="ZAM ZAM GLASS ART" class="logo" />
     <h1>Welcome, Owner</h1>
     <p>Manage Orders, Staff & Track Everything</p>
-  </header>
+  </header>  <main class="dashboard"><div class="card">
+  <h3>Track All Orders</h3>
+  <p>View, filter, and manage all orders from customers.</p>
+  <a href="order-tracking.html">Open</a>
+</div>
 
-  <main class="dashboard">
+<div class="card">
+  <h3>Staff Management</h3>
+  <p>Check staff status, live location, attendance and task update.</p>
+  <a href="staff-tracking.html">Open</a>
+</div>
 
-    <div class="card">
-      <h3>Track All Orders</h3>
-      <p>View, filter, and manage all orders from customers.</p>
-      <a href="order-tracking.html">Open</a>
-    </div>
+<div class="card">
+  <h3>Approve Workers</h3>
+  <p>Approve or reject staff who register via mobile + OTP.</p>
+  <a href="approve-workers.html">Open</a>
+</div>
 
-    <div class="card">
-      <h3>Staff Management</h3>
-      <p>Check staff status, live location, attendance and task update.</p>
-      <a href="staff-tracking.html">Open</a>
-    </div>
+<div class="card">
+  <h3>Billing Control</h3>
+  <p>Manage sale, purchase, transactions and reports.</p>
+  <!-- Link will be added later -->
+</div>
 
-    <div class="card">
-      <h3>Approve Workers</h3>
-      <p>Approve or reject staff who register via mobile + OTP.</p>
-      <a href="approve-workers.html">Open</a>
-    </div>
+<div class="card">
+  <h3>Sales Dashboard</h3>
+  <p>Track daily sales, commission, bill uploads etc.</p>
+  <!-- Link will be added later -->
+</div>
 
-    <div class="card">
-      <h3>Billing Control</h3>
-      <p>Manage sale, purchase, transactions and reports.</p>
-      <!-- Link will be added later -->
-    </div>
+<div class="card">
+  <h3>Salary & Staff Reports</h3>
+  <p>Manage staff salaries (pagar), role-based payroll, attendance-based payment and more.</p>
+  <!-- Link will be added later -->
+</div>
 
-    <div class="card">
-      <h3>Sales Dashboard</h3>
-      <p>Track daily sales, commission, bill uploads etc.</p>
-      <!-- Link will be added later -->
-    </div>
-
-    <div class="card">
-      <h3>Salary & Staff Reports</h3>
-      <p>Manage staff salaries (pagar), role-based payroll, attendance-based payment and more.</p>
-      <a href="salary-report.html">Open</a>
-    </div>
-
-  </main>
-
-  <footer>
+  </main>  <footer>
     Muzaffarpur | zamzamglass.art | Contact: 6203086364
   </footer>
 </body>
