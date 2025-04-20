@@ -1,0 +1,89 @@
+<!DOCTYPE html><html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Salesman Dashboard - ZAM ZAM GLASS ART</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #eef2f3;
+    }
+    header {
+      background: #002c3e;
+      color: #fff;
+      padding: 20px;
+      text-align: center;
+    }
+    .dashboard {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 20px;
+      padding: 20px;
+    }
+    .card {
+      background: #fff;
+      border-radius: 12px;
+      box-shadow: 0 0 12px rgba(0,0,0,0.08);
+      padding: 20px;
+    }
+    .card h2 {
+      margin-top: 0;
+    }
+    button {
+      background: #00aaff;
+      color: white;
+      padding: 10px 16px;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+    button:hover {
+      background: #008ecc;
+    }
+    footer {
+      text-align: center;
+      padding: 10px;
+      color: #888;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Welcome, Salesman</h1>
+    <p>Live Attendance, Order Uploads, Daily Tracking</p>
+  </header>  <main class="dashboard">
+    <div class="card">
+      <h2>1. Attendance (Photo + Location)</h2>
+      <p>Click below to mark your attendance with live photo and location.</p>
+      <button onclick="alert('Opening Camera & Location')">Mark Attendance</button>
+    </div><div class="card">
+  <h2>2. Daily Order Upload</h2>
+  <p>Upload bills for each order you complete today. Manager or Owner must approve.</p>
+  <button onclick="alert('Upload Order - Pending Manager Approval')">Upload Bill</button>
+</div>
+
+<div class="card">
+  <h2>3. Order Flow</h2>
+  <p>Orders will be shown one-by-one. After uploading a bill, next order unlocks.</p>
+  <button onclick="alert('View Current Order')">View Order</button>
+</div>
+
+<div class="card">
+  <h2>4. Commission Tracking</h2>
+  <p>Commission is calculated at 5% if more than 90 orders/month. Below 75 orders, 5 holidays & salary cut.</p>
+  <button onclick="alert('Commission Report Open')">Check Commission</button>
+</div>
+
+<div class="card">
+  <h2>5. Live Movement</h2>
+  <p>Live tracking of your location for each order visit with call tracking (if enabled).</p>
+  <button onclick="alert('Live Movement Tracking')">Track Now</button>
+</div>
+
+  </main>  <footer>
+    ZAM ZAM GLASS ART | Salesman Module | Muzaffarpur
+  </footer>
+</body>
+</html>
