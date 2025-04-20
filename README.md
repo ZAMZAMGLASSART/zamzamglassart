@@ -1,16 +1,14 @@
-## Hi there 👋
+# ZAM ZAM GLASS ART
 
-<!--
-**ZAMZAMGLASSART/zamzamglassart** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
+Official Website: [https://zamzamglass.art](https://zamzamglass.art)
 
-Here are some ideas to get you started:
+This project includes role-based login system for:
+- Owner
+- Manager
+- Cashier
+- Salesman
+- Delivery Head
+- Customer (OTP based)
+- Staff (Approval based)
 
-- 🔭 I’m currently working on ...
-- 🌱 I’m currently learning ...
-- 👯 I’m looking to collaborate on ...
-- 🤔 I’m looking for help with ...
-- 💬 Ask me about ...
-- 📫 How to reach me: ...
-- 😄 Pronouns: ...
-- ⚡ Fun fact: ...
--->
+Connected with Firebase & Vercel.
