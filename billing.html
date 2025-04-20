@@ -1,108 +1,114 @@
 <!DOCTYPE html><html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Billing Control - ZAM ZAM GLASS ART</title>
-  <link rel="stylesheet" href="style.css" />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Billing Control - Zam Zam Glass Art</title>
+  <link rel="stylesheet" href="style.css">
   <style>
     body {
-      font-family: 'Inter', sans-serif;
-      background: #f5f7fa;
-      color: #333;
       margin: 0;
-      padding: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #f4f6f9;
     }
     header {
-      background: #fff;
-      padding: 1rem 2rem;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-    header h1 {
-      font-size: 24px;
-      color: #1d3557;
-    }
-    nav {
-      display: flex;
-      gap: 1rem;
-    }
-    nav a {
-      text-decoration: none;
-      color: #1d3557;
-      font-weight: 600;
+      background-color: #354A5F;
+      color: white;
+      padding: 15px 30px;
+      text-align: center;
+      font-size: 22px;
+      font-weight: bold;
     }
     .container {
-      padding: 2rem;
+      padding: 20px;
     }
-    .section {
-      background: #fff;
-      border-radius: 12px;
-      padding: 2rem;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
-      margin-bottom: 2rem;
+    .tabs {
+      display: flex;
+      justify-content: space-between;
+      gap: 10px;
+      margin-bottom: 20px;
+      flex-wrap: wrap;
     }
-    .section h2 {
-      font-size: 20px;
-      margin-bottom: 1rem;
+    .tab {
+      background-color: white;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      flex: 1 1 300px;
     }
-    .card-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
-      gap: 1.5rem;
+    .tab h3 {
+      margin: 0 0 10px;
+      color: #354A5F;
     }
-    .card {
-      background: #f0f4f8;
-      border-radius: 10px;
-      padding: 1rem 1.2rem;
-      text-align: center;
-      font-weight: 500;
-      transition: 0.3s;
+    .tab p {
+      color: #666;
+      font-size: 14px;
     }
-    .card:hover {
-      background: #dceefc;
+    .tab button {
+      margin-top: 10px;
+      padding: 8px 15px;
+      background-color: #354A5F;
+      color: white;
+      border: none;
+      border-radius: 5px;
       cursor: pointer;
     }
-    .card span {
-      display: block;
-      font-size: 18px;
-      font-weight: bold;
-      color: #1d3557;
-      margin-bottom: 0.3rem;
+    .footer {
+      margin-top: 40px;
+      background-color: #354A5F;
+      color: white;
+      text-align: center;
+      padding: 15px;
     }
   </style>
 </head>
 <body>
-  <header>
-    <h1>ZAM ZAM GLASS ART - Billing Control</h1>
-    <nav>
-      <a href="#">Home</a>
-      <a href="#">Dashboard</a>
-      <a href="#">Items</a>
-      <a href="#">Menu</a>
-    </nav>
-  </header>  <div class="container">
-    <div class="section">
-      <h2>Quick Links</h2>
-      <div class="card-grid">
-        <div class="card"><span>Sale Invoice</span>Generate customer bills</div>
-        <div class="card"><span>Purchase</span>Record item purchases</div>
-        <div class="card"><span>Expenses</span>Track shop expenses</div>
-        <div class="card"><span>P2P Transfer</span>Shift balance between wallets</div>
-        <div class="card"><span>Reports</span>View detailed billing reports</div>
+  <header>Billing Dashboard - ZAM ZAM GLASS ART</header>
+  <div class="container">
+    <div class="tabs">
+      <div class="tab">
+        <h3>Sales Invoice</h3>
+        <p>Create and track sale transactions, bills, GST invoices.</p>
+        <button>Create Invoice</button>
       </div>
-    </div><div class="section">
-  <h2>Transaction Summary</h2>
-  <div class="card-grid">
-    <div class="card"><span>₹82,300</span>Total Sales</div>
-    <div class="card"><span>₹19,400</span>Pending Payments</div>
-    <div class="card"><span>₹7,800</span>Total Expenses</div>
-    <div class="card"><span>₹54,100</span>Net Profit</div>
+      <div class="tab">
+        <h3>Purchase</h3>
+        <p>Manage your purchases and expenses records easily.</p>
+        <button>New Purchase</button>
+      </div>
+      <div class="tab">
+        <h3>Estimate / Quotation</h3>
+        <p>Send estimates to customers with built-in templates.</p>
+        <button>Create Quotation</button>
+      </div>
+      <div class="tab">
+        <h3>Sale Order</h3>
+        <p>Track customer orders and pending deliveries.</p>
+        <button>New Order</button>
+      </div>
+      <div class="tab">
+        <h3>Reports</h3>
+        <p>Get all sale/purchase/GST/summary reports in 1 click.</p>
+        <button>View Reports</button>
+      </div>
+      <div class="tab">
+        <h3>Payment In/Out</h3>
+        <p>Record payments received from or paid to parties.</p>
+        <button>Record Payment</button>
+      </div>
+      <div class="tab">
+        <h3>Proforma Invoice</h3>
+        <p>Generate proforma invoice before final bill.</p>
+        <button>Create Proforma</button>
+      </div>
+      <div class="tab">
+        <h3>Return / Refund</h3>
+        <p>Manage sale and purchase return transactions.</p>
+        <button>Return Items</button>
+      </div>
+    </div>
   </div>
-</div>
-
+  <div class="footer">
+    Muzaffarpur | www.zamzamglass.art | 6203086364
   </div>
 </body>
 </html>
