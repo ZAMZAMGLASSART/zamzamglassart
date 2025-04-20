@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Staff Tracking - ZAM ZAM GLASS ART</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: #eef2f3;
+      padding: 30px;
+    }
+    h1 {
+      text-align: center;
+      margin-bottom: 30px;
+      color: #2c3e50;
+    }
+    .staff-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 20px;
+    }
+    .staff-card {
+      background: #fff;
+      border-radius: 10px;
+      padding: 20px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    }
+    .staff-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .status-dot {
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      display: inline-block;
+    }
+    .active {
+      background: #4caf50;
+    }
+    .inactive {
+      background: #ccc;
+    }
+    .task {
+      font-style: italic;
+      margin: 10px 0;
+      color: #555;
+    }
+    .location {
+      font-size: 14px;
+      color: #888;
+    }
+  </style>
+</head>
+<body>
+  <h1>Staff Tracking - ZAM ZAM GLASS ART</h1>
+
+  <div class="staff-container">
+    <div class="staff-card">
+      <div class="staff-header">
+        <strong>Suraj</strong>
+        <span class="status-dot active"></span>
+      </div>
+      <div class="task">Cutting Toughened Glass - In Progress</div>
+      <div class="location">Live Location: Near Workshop A</div>
+    </div>
+
+    <div class="staff-card">
+      <div class="staff-header">
+        <strong>Ajad</strong>
+        <span class="status-dot inactive"></span>
+      </div>
+      <div class="task">—</div>
+      <div class="location">Last seen: 2 hrs ago</div>
+    </div>
+
+    <div class="staff-card">
+      <div class="staff-header">
+        <strong>Sahil</strong>
+        <span class="status-dot active"></span>
+      </div>
+      <div class="task">Polishing 8x4 Panels</div>
+      <div class="location">Live Location: Site B Entry</div>
+    </div>
+  </div>
+</body>
+</html>
