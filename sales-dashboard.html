@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Sales Dashboard - ZAM ZAM GLASS ART</title>
+  <link rel="stylesheet" href="owner.css" />
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      margin: 0;
+      background: #f6f8fa;
+      color: #333;
+    }
+    .container {
+      max-width: 1000px;
+      margin: auto;
+      padding: 20px;
+    }
+    .header {
+      text-align: center;
+      padding: 20px 0;
+    }
+    .header h1 {
+      margin: 10px 0;
+    }
+    .card-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+      margin-top: 30px;
+    }
+    .card {
+      background: white;
+      border-radius: 12px;
+      padding: 20px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      transition: all 0.3s ease;
+    }
+    .card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 0 15px rgba(0,0,0,0.15);
+    }
+    .card h3 {
+      margin: 0 0 10px;
+    }
+    .card p {
+      color: #666;
+    }
+    .btn {
+      margin-top: 10px;
+      display: inline-block;
+      padding: 8px 14px;
+      background: #007bff;
+      color: white;
+      border-radius: 6px;
+      text-decoration: none;
+    }
+    .btn:hover {
+      background: #0056b3;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <img src="zamzam-logo.jpg" alt="ZAM ZAM GLASS ART" width="100" />
+      <h1>Sales Dashboard</h1>
+      <p>Track all sales activities, bill uploads, and commission in real-time.</p>
+    </div>
+
+    <div class="card-grid">
+      <div class="card">
+        <h3>New Bill Upload</h3>
+        <p>Salesman can upload daily bills for approval.</p>
+        <a href="#" class="btn">Upload Now</a>
+      </div>
+
+      <div class="card">
+        <h3>View All Bills</h3>
+        <p>See uploaded bills, status (pending/approved), and sales summary.</p>
+        <a href="#" class="btn">View Bills</a>
+      </div>
+
+      <div class="card">
+        <h3>Commission Tracker</h3>
+        <p>5% commission after 90 orders per month, track progress here.</p>
+        <a href="#" class="btn">View Commission</a>
+      </div>
+
+      <div class="card">
+        <h3>Sales Summary Report</h3>
+        <p>Download daily/monthly PDF reports of all sales activity.</p>
+        <a href="#" class="btn">Download Report</a>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
