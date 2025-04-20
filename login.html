@@ -1,107 +1,101 @@
-<!DOCTYPE html><html lang="en">
+<!DOCTYPE html>
+<html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>ZAM ZAM Login</title>
   <link rel="stylesheet" href="style.css" />
   <style>
-    body { font-family: Arial, sans-serif; text-align: center; padding: 20px; }
-    .login-box { max-width: 400px; margin: auto; padding: 30px; background: #fff; border-radius: 10px; box-shadow: 0 0 10px #ccc; }
-    select, input, button { width: 90%; padding: 10px; margin: 10px 0; font-size: 16px; }
-    button { background-color: #000; color: white; border: none; cursor: pointer; }
-    button:hover { background-color: #333; }
-    .hidden { display: none; }
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      padding: 20px;
+      background-color: #f4f4f4;
+    }
+    .login-box {
+      max-width: 400px;
+      margin: auto;
+      padding: 30px;
+      background: #fff;
+      border-radius: 10px;
+      box-shadow: 0 0 10px #ccc;
+    }
+    select, input, button {
+      width: 90%;
+      padding: 10px;
+      margin: 10px 0;
+      font-size: 16px;
+    }
+    button {
+      background-color: #000;
+      color: white;
+      border: none;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #333;
+    }
+    p a {
+      color: #007BFF;
+      text-decoration: none;
+    }
   </style>
 </head>
-<body>  <div class="login-box">
+<body>
+
+  <div class="login-box">
     <h1>ZAM ZAM GLASS ART</h1>
-    <select id="role" onchange="showFields()">
+
+    <select id="role" onchange="resetFields()">
       <option value="">Select Role</option>
       <option value="owner">Owner</option>
       <option value="manager">Manager</option>
       <option value="cashier">Cashier</option>
       <option value="salesman">Salesman</option>
       <option value="deliveryhead">Delivery Head</option>
-      <option value="customer">Customer</option>
-      <option value="staff">Staff</option>
-    </select><div id="fixedLogin" class="hidden">
-  <input type="text" id="username" placeholder="Enter Username" />
-  <input type="password" id="password" placeholder="Enter Password" />
-  <button onclick="handleFixedLogin()">Login</button>
-</div>
+    </select><br>
 
-<div id="mobileLogin" class="hidden">
-  <input type="text" id="mobile" placeholder="Enter Mobile Number" />
-  <button onclick="sendOTP()">Send OTP</button>
-  <input type="text" id="otp" class="hidden" placeholder="Enter OTP" />
-  <button onclick="verifyOTP()" class="hidden">Verify OTP</button>
-</div>
+    <input type="text" id="username" placeholder="Enter Username" />
+    <input type="password" id="password" placeholder="Enter Password" />
+    <button onclick="handleLogin()">Login</button>
 
-<div id="staffRegister" class="hidden">
-  <input type="text" id="staffName" placeholder="Enter Your Name" />
-  <input type="text" id="staffPhone" placeholder="Enter Phone Number" />
-  <select>
-    <option>Select Staff Role</option>
-    <option>Cutting</option>
-    <option>Polishing</option>
-    <option>Helping</option>
-  </select>
-  <button onclick="submitStaff()">Submit for Approval</button>
-</div>
+    <p style="margin-top: 20px; font-size: 14px;">
+      Forgot Password? <a href="#">Reset with OTP</a>
+    </p>
+  </div>
 
-<p style="margin-top: 20px; font-size: 14px;">Forgot Password? <a href="#">Reset with OTP</a></p>
-
-  </div>  <script>
-    function showFields() {
-      const role = document.getElementById("role").value;
-      document.getElementById("fixedLogin").classList.add("hidden");
-      document.getElementById("mobileLogin").classList.add("hidden");
-      document.getElementById("staffRegister").classList.add("hidden");
-
-      if (["owner", "manager", "cashier", "salesman", "deliveryhead"].includes(role)) {
-        document.getElementById("fixedLogin").classList.remove("hidden");
-      } else if (role === "customer") {
-        document.getElementById("mobileLogin").classList.remove("hidden");
-      } else if (role === "staff") {
-        document.getElementById("staffRegister").classList.remove("hidden");
-      }
+  <script>
+    function resetFields() {
+      document.getElementById("username").value = "";
+      document.getElementById("password").value = "";
     }
 
-    function handleFixedLogin() {
-      const role = document.getElementById("role").value;
-      const username = document.getElementById("username").value;
-      const password = document.getElementById("password").value;
+    function handleLogin() {
+      const role = document.getElementById("role").value.trim();
+      const username = document.getElementById("username").value.trim();
+      const password = document.getElementById("password").value.trim();
 
-      // Dummy fixed credentials (replace with backend validation)
       const users = {
-        owner: "owner123",
-        manager: "manager123",
-        cashier: "cashier123",
-        salesman: "sales123",
-        deliveryhead: "delivery123"
+        owner: { user: "zamzam", pass: "owner@123" },
+        manager: { user: "nayyer", pass: "manager@123" },
+        cashier: { user: "abc", pass: "cashier@123" },
+        salesman: { user: "xyz", pass: "sales@123" },
+        deliveryhead: { user: "delivery", pass: "delivery@123" }
       };
 
-      if (users[role] === password) {
+      if (!role || !username || !password) {
+        alert("Please fill all fields.");
+        return;
+      }
+
+      const account = users[role];
+      if (account && account.user === username && account.pass === password) {
         window.location.href = role + ".html";
       } else {
-        alert("Invalid Username or Password");
+        alert("Invalid username or password.");
       }
     }
+  </script>
 
-    function sendOTP() {
-      document.getElementById("otp").classList.remove("hidden");
-      document.querySelector("button[onclick='verifyOTP()']").classList.remove("hidden");
-      alert("OTP sent to your mobile number (demo only)");
-    }
-
-    function verifyOTP() {
-      // Demo OTP verify
-      alert("OTP Verified! Logging in...");
-      window.location.href = "customer.html";
-    }
-
-    function submitStaff() {
-      alert("Staff registration submitted. Please wait for Manager/Owner approval.");
-    }
-  </script></body>
+</body>
 </html>
