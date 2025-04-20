@@ -50,51 +50,51 @@
 </head>
 <body>
   <header>Sales Dashboard - Owner View</header>  <div class="section">
-    <h2>Live Sales Data</h2>
-    <div class="grid">
-      <div class="card">
-        <h3>Salesman: Junaid</h3>
-        <p>Total Orders Today: 3</p>
-        <p>Uploaded Bills: 3</p>
-        <p>Approved: 2 | Pending: 1</p>
-        <p>Commission: ₹150</p>
-      </div>
-      <div class="card">
-        <h3>Salesman: Irfan</h3>
-        <p>Total Orders Today: 2</p>
-        <p>Uploaded Bills: 2</p>
-        <p>Approved: 2</p>
-        <p>Commission: ₹120</p>
-      </div>
+    <h2>Live Salesman Tracking</h2>
+    <div class="grid" id="salesman-data">
+      <!-- Dynamic data will be inserted here -->
     </div>
-  </div>  <div class="section">
-    <h2>Live Location & Attendance</h2>
-    <div class="grid">
-      <div class="card">
-        <p>Junaid - Location: Muzaffarpur</p>
-        <p>Photo: [Captured Image]</p>
-        <p>Status: Active</p>
-      </div>
-      <div class="card">
-        <p>Irfan - Location: Mithanpura</p>
-        <p>Photo: [Captured Image]</p>
-        <p>Status: Active</p>
-      </div>
-    </div>
-  </div>  <div class="section">
-    <h2>Call Activity & Movement</h2>
-    <div class="grid">
-      <div class="card">
-        <p>Salesman: Junaid</p>
-        <p>Today's Calls: 15</p>
-        <p>Movement: 3 Areas Visited</p>
-      </div>
-      <div class="card">
-        <p>Salesman: Irfan</p>
-        <p>Today's Calls: 10</p>
-        <p>Movement: 2 Areas Visited</p>
-      </div>
-    </div>
-  </div>
-</body>
+  </div>  <script>
+    function loadSalesmanData() {
+      const data = [
+        {
+          name: "Shahid",
+          location: "Muzaffarpur",
+          ordersUploaded: 3,
+          ordersCompleted: 2,
+          status: "Active",
+          commission: "₹120"
+        },
+        {
+          name: "Irfan",
+          location: "Chandwara",
+          ordersUploaded: 4,
+          ordersCompleted: 4,
+          status: "Active",
+          commission: "₹160"
+        }
+      ];
+
+      const container = document.getElementById('salesman-data');
+      container.innerHTML = "";
+
+      data.forEach(salesman => {
+        const card = document.createElement('div');
+        card.className = "card";
+        card.innerHTML = `
+          <h3>${salesman.name}</h3>
+          <p><strong>Location:</strong> ${salesman.location}</p>
+          <p><strong>Orders Uploaded:</strong> ${salesman.ordersUploaded}</p>
+          <p><strong>Orders Completed:</strong> ${salesman.ordersCompleted}</p>
+          <p><strong>Status:</strong> ${salesman.status}</p>
+          <p><strong>Commission:</strong> ${salesman.commission}</p>
+        `;
+        container.appendChild(card);
+      });
+    }
+
+    // Auto-load data every 10 seconds (simulate real-time)
+    setInterval(loadSalesmanData, 10000);
+    window.onload = loadSalesmanData;
+  </script></body>
 </html>
