@@ -1,97 +1,104 @@
 <!DOCTYPE html><html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>ZAM ZAM GLASS ART - Login</title>
-  <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ZAM ZAM Login</title>
   <style>
     body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #f7f9fc;
       margin: 0;
-      padding: 0;
-      font-family: 'Segoe UI', sans-serif;
-      background: linear-gradient(to right, #000428, #004e92);
-      color: #fff;
       display: flex;
       justify-content: center;
       align-items: center;
       height: 100vh;
-    }.login-container {
-  background-color: #ffffff10;
-  backdrop-filter: blur(10px);
-  padding: 30px;
-  border-radius: 12px;
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
-  width: 350px;
-  text-align: center;
-}
-
-.login-container img {
-  width: 100px;
-  margin-bottom: 20px;
-}
-
-h2 {
-  margin-bottom: 15px;
-  font-size: 24px;
-  color: #fff;
-}
-
-select, input[type="text"], input[type="password"], button {
-  width: 100%;
-  padding: 10px;
-  margin: 8px 0;
-  border-radius: 8px;
-  border: none;
-  font-size: 16px;
-}
-
-select, input {
-  background-color: #fff;
-  color: #333;
-}
-
-button {
-  background-color: #ff9800;
-  color: #fff;
-  font-weight: bold;
-  cursor: pointer;
-}
-
-button:hover {
-  background-color: #e68900;
-}
-
-.otp-link {
-  margin-top: 10px;
-  display: block;
-  font-size: 14px;
-  color: #ffcc00;
-}
-
+    }
+    .login-box {
+      background: #ffffff;
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 0 15px rgba(0,0,0,0.1);
+      width: 90%;
+      max-width: 400px;
+      text-align: center;
+    }
+    .login-box h2 {
+      margin-bottom: 20px;
+      color: #2c3e50;
+    }
+    select, input {
+      width: 100%;
+      padding: 12px;
+      margin: 8px 0;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+    }
+    button {
+      width: 100%;
+      padding: 12px;
+      margin-top: 10px;
+      background-color: #2980b9;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+    a {
+      display: block;
+      margin-top: 10px;
+      color: #2980b9;
+      text-decoration: none;
+    }
   </style>
 </head>
 <body>
-  <div class="login-container">
-    <img src="zamzam-logo.jpg" alt="ZAM ZAM GLASS ART">
-    <h2>Login to ZAM ZAM GLASS ART</h2><form>
-  <select required>
-    <option value="">Select Role</option>
-    <option value="owner">Owner</option>
-    <option value="manager">Manager</option>
-    <option value="cashier">Cashier</option>
-    <option value="salesman">Salesman</option>
-    <option value="deliveryhead">Delivery Head</option>
-    <option value="customer">Customer</option>
-    <option value="staff">Staff</option>
-  </select>
+  <div class="login-box">
+    <h2>ZAM ZAM Login</h2>
+    <select id="role">
+      <option value="">Select Role</option>
+      <option value="owner">Owner</option>
+      <option value="manager">Manager</option>
+      <option value="cashier">Cashier</option>
+      <option value="salesman">Salesman</option>
+      <option value="deliveryhead">Delivery Head</option>
+      <option value="customer">Customer</option>
+      <option value="staff">Staff</option>
+    </select>
+    <input type="text" id="username" placeholder="Enter Username" />
+    <input type="password" id="password" placeholder="Enter Password" />
+    <button onclick="login()">Login</button>
+    <a href="#">I'm a Worker? Register via OTP</a>
+  </div>  <script>
+    const credentials = {
+      owner: { user: "owner", pass: "123" },
+      manager: { user: "manager", pass: "123" },
+      cashier: { user: "cashier", pass: "123" },
+      salesman: { user: "salesman", pass: "123" },
+      deliveryhead: { user: "delivery", pass: "123" },
+      customer: { user: "customer", pass: "123" },
+      staff: { user: "staff", pass: "123" },
+    };
 
-  <input type="text" placeholder="Username" required>
-  <input type="password" placeholder="Password" required>
-  <button type="submit">Login</button>
-</form>
+    function login() {
+      const role = document.getElementById("role").value;
+      const username = document.getElementById("username").value.trim();
+      const password = document.getElementById("password").value.trim();
 
-<a href="#" class="otp-link">Customer or Staff? Login via OTP</a>
+      if (!role || !username || !password) {
+        alert("Please fill all fields");
+        return;
+      }
 
-  </div>
-</body>
+      if (
+        credentials[role] &&
+        username === credentials[role].user &&
+        password === credentials[role].pass
+      ) {
+        window.location.href = `${role}.html`;
+      } else {
+        alert("Invalid credentials!");
+      }
+    }
+  </script></body>
 </html>
