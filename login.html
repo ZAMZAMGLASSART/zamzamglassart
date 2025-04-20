@@ -1,60 +1,14 @@
-<!DOCTYPE html><html lang="en">
+<!DOCTYPE html>
+<html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>ZAM ZAM Login</title>
-  <style>
-    body {
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background-color: #f7f9fc;
-      margin: 0;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
-    }
-    .login-box {
-      background: #ffffff;
-      padding: 30px;
-      border-radius: 12px;
-      box-shadow: 0 0 15px rgba(0,0,0,0.1);
-      width: 90%;
-      max-width: 400px;
-      text-align: center;
-    }
-    .login-box h2 {
-      margin-bottom: 20px;
-      color: #2c3e50;
-    }
-    select, input {
-      width: 100%;
-      padding: 12px;
-      margin: 8px 0;
-      border: 1px solid #ccc;
-      border-radius: 6px;
-    }
-    button {
-      width: 100%;
-      padding: 12px;
-      margin-top: 10px;
-      background-color: #2980b9;
-      color: white;
-      border: none;
-      border-radius: 6px;
-      font-size: 16px;
-      cursor: pointer;
-    }
-    a {
-      display: block;
-      margin-top: 10px;
-      color: #2980b9;
-      text-decoration: none;
-    }
-  </style>
+  <title>ZAM ZAM GLASS ART - Login</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
   <div class="login-box">
-    <h2>ZAM ZAM Login</h2>
+    <h2>ZAM ZAM GLASS ART</h2>
     <select id="role">
       <option value="">Select Role</option>
       <option value="owner">Owner</option>
@@ -65,40 +19,41 @@
       <option value="customer">Customer</option>
       <option value="staff">Staff</option>
     </select>
-    <input type="text" id="username" placeholder="Enter Username" />
-    <input type="password" id="password" placeholder="Enter Password" />
+    <input type="text" id="username" placeholder="Username" />
+    <input type="password" id="password" placeholder="Password" />
     <button onclick="login()">Login</button>
-    <a href="#">I'm a Worker? Register via OTP</a>
-  </div>  <script>
-    const credentials = {
-      owner: { user: "owner", pass: "123" },
-      manager: { user: "manager", pass: "123" },
-      cashier: { user: "cashier", pass: "123" },
-      salesman: { user: "salesman", pass: "123" },
-      deliveryhead: { user: "delivery", pass: "123" },
-      customer: { user: "customer", pass: "123" },
-      staff: { user: "staff", pass: "123" },
-    };
+    <p>I'm a Worker? <a href="#">Register via OTP</a></p>
+  </div>
 
+  <script>
     function login() {
-      const role = document.getElementById("role").value;
-      const username = document.getElementById("username").value.trim();
-      const password = document.getElementById("password").value.trim();
+      const role = document.getElementById('role').value;
+      const username = document.getElementById('username').value;
+      const password = document.getElementById('password').value;
 
-      if (!role || !username || !password) {
-        alert("Please fill all fields");
+      // Dummy login details
+      const credentials = {
+        owner: { user: 'owner', pass: 'owner123' },
+        manager: { user: 'manager', pass: 'manager123' },
+        cashier: { user: 'cashier', pass: 'cashier123' },
+        salesman: { user: 'salesman', pass: 'salesman123' },
+        deliveryhead: { user: 'delivery', pass: 'delivery123' }
+      };
+
+      if (!credentials[role]) {
+        alert('Please select a valid role!');
         return;
       }
 
       if (
-        credentials[role] &&
         username === credentials[role].user &&
         password === credentials[role].pass
       ) {
         window.location.href = `${role}.html`;
       } else {
-        alert("Invalid credentials!");
+        alert('Invalid username or password!');
       }
     }
-  </script></body>
+  </script>
+</body>
 </html>
